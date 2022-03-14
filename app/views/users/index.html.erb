@@ -1,9 +1,14 @@
-<h1 class= "title">Blog Index</h1>
-# <p>Find me in app/views/users/index.html.erb</p>
-<section>
-<div>
-<h1>
-<%= @user.name %>
-</h1>
-</div>
-</section>
+<h1 class= "title">The light box</h1>
+    <main class= "main">
+    <ul>
+    <% @users.each do |user| %>
+        <li class="grow">
+    <div><%= image_tag (user.photo), height: 200 ,width: 200 %></div>
+    <div><%= link_to (user.name),user_path(user.id) %></div>
+            <div>Number of posts: <%= user.posts_counter%></div>
+            <%end%>
+            </li>
+    </ul>
+    </main>
+
+

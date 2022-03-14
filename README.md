@@ -2,7 +2,6 @@
 # Rails blog app
 
 This project is a blog website built using Ruby on Rails.
-Things you may want to cover:
 
 ## Built With
 
