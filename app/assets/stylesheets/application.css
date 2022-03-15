@@ -34,6 +34,7 @@
 
  ul {
      list-style: none;
+     width: 90% !important;
  }
 
  li {
@@ -42,11 +43,10 @@
      box-shadow: 0 4px 8px 0 #eee781, 0 6px 20px 0 #e5e5e5;
      padding: 1rem;
      margin: 3rem;
-     width: 95%;
      border-radius: 5px;
      column-gap: 3rem;
      background-color: #242423;
-     width: 90%
+     width: 90% !important;
  }
 
  
