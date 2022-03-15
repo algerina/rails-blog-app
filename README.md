@@ -6,8 +6,6 @@ This project is a blog website built using Ruby on Rails.
 ## Built With
 
 - Ruby on Rails
-
-
 ## To get a local copy up and running follow these simple example steps.
 
 Open your termnial and run the following command:
