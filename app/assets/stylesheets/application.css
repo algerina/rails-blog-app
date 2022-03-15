@@ -13,3 +13,146 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+* {
+    box-sizing: border-box;
+  }
+
+ body {
+     background-color:#333533;
+     color: white;
+     margin: 1rem;
+     padding: 1rem;
+ }
+
+ h1 {
+    text-shadow: 3px 3px #c6c6c6bf;
+    font-family: Arial, Helvetica, sans-serif;
+    color: yellow;
+ }
+
+ ul {
+     list-style: none;
+ }
+
+ li {
+     display: flex;
+     flex-direction: row;
+     box-shadow: 0 4px 8px 0 #eee781, 0 6px 20px 0 #e5e5e5;
+     padding: 1rem;
+     margin: 3rem;
+     width: 95%;
+     border-radius: 5px;
+     column-gap: 3rem;
+     background-color: #242423;
+     width: 90%
+ }
+
+ 
+.grow:hover,
+.grow:focus {
+  transform: scale(1.05);
+}
+
+
+ .main {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .title {
+     text-align: center;
+ }
+
+ p {
+     font-size: larger;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+img {
+     border-radius: 50%;
+ }
+
+ .usersShow {
+     display: flex;
+     justify-content: space-between;
+     gap:1rem;
+ }
+
+.counter {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 130px 10px;
+    height: fit-content;
+    border-radius: 1rem;
+
+}
+
+a {
+    font-size: larger;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 3px 3px #c6c6c6bf;
+    color: yellow;
+}
+
+.allPosts {
+    color: white;
+
+}
+
+button {
+    --glow-color: rgb(255, 243, 176);
+    --glow-spread-color: rgba(255, 253, 123, 0.781);
+    --enhanced-glow-color: rgb(254, 255, 206);
+    /* --btn-color: rgb(243, 229, 32); */
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   
+   button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }

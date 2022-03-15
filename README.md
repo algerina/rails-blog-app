@@ -3,7 +3,6 @@
 
 This project is a blog website built using Ruby on Rails.
 
-
 ## Built With
 
 - Ruby on Rails
