@@ -32,6 +32,12 @@
     color: yellow;
  }
 
+ h2 {
+     color: rgb(221, 221, 97);
+     font-weight: 400;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
  ul {
      list-style: none;
      width: 90% !important;
@@ -47,6 +53,7 @@
      column-gap: 3rem;
      background-color: #242423;
      width: 90% !important;
+     gap: 15rem;
  }
 
  
@@ -89,7 +96,7 @@ img {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 130px 10px;
+    /* margin: 130px 10px; */
     height: fit-content;
     border-radius: 1rem;
 
