@@ -33,7 +33,7 @@
  }
 
  h2 {
-     color: rgb(221, 221, 97);
+     color:rgba(248, 220, 62, 0.918);
      font-weight: 400;
      font-family: Arial, Helvetica, sans-serif;
  }
@@ -106,7 +106,7 @@ a {
     font-size: larger;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 3px 3px #c6c6c6bf;
+    /* text-shadow: 3px 3px #c6c6c6bf; */
     color: yellow;
 }
 
