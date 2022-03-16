@@ -15,7 +15,7 @@
 
   <button><%= link_to ("New comment"), new_user_post_comment_path(@user_id, @post_id)%></button>
 
-  <%= button_to ("Like"), user_post_likes_path(@user_id, @post_id), method: :post %>
+  <%= button_to ("Like"), user_post_likes_path(@user_id, @post_id), method: :post, class:"likes" %>
 
 
 </div>
