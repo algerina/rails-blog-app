@@ -33,7 +33,7 @@
  }
 
  h2 {
-     color: rgb(221, 221, 97);
+     color:rgba(248, 220, 62, 0.918);
      font-weight: 400;
      font-family: Arial, Helvetica, sans-serif;
  }
@@ -106,7 +106,7 @@ a {
     font-size: larger;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 3px 3px #c6c6c6bf;
+    /* text-shadow: 3px 3px #c6c6c6bf; */
     color: yellow;
 }
 
@@ -147,6 +147,7 @@ button {
     background-color: var(--glow-spread-color);
     filter: blur(2em);
     opacity: .7;
+    color: yellow;
     transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
    }
    
@@ -163,3 +164,19 @@ button {
            0 0 2.5em 2em var(--glow-spread-color),
            inset 0 0 .5em .25em var(--glow-color);
    }
+
+.likes {
+       color: gold;
+       display: flex;
+   }
+
+.button_to {
+    display: flex;
+    max-width: 3rem;
+    margin: 1rem;
+
+} 
+/* 
+.likeButton {
+    display:flex;
+} */

@@ -3,6 +3,8 @@
 
 This project is a blog website built using Ruby on Rails.
 
+![screenshot](./app/assets/images/blogapp1.JPG)
+
 ## Built With
 
 - Ruby on Rails
