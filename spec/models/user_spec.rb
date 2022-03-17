@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do
-    User.new( name: ' ', photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg', bio: 'Artist from wonderland', posts_counter: 1 )
-  end
+  subject {  User.new(id: 3, name: 'User 3', posts_counter: 0) }
 
   before { subject.save }
 
@@ -16,6 +14,7 @@ RSpec.describe User, type: :model do
     subject.posts_counter = nil
     expect(subject).to_not be_valid
   end
+
 
 end
 
