@@ -14,4 +14,8 @@ class Post < ApplicationRecord
   def most_recent_comments
     comments.order(created_at: :desc).limit(5)
   end
+
+  
+  validates :name, presence: true, length: { maximum: 250 }
+
 end
