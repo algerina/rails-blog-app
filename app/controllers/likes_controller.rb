@@ -4,7 +4,6 @@ class LikesController < ApplicationController
     @user_id = params[:user_id]
     @post_id = params[:post_id]
     if liked?
-      # redirect_to user_post_path(@user_id, @post_id)
       flash.notice = 'Like added successfuly.'
       return
     else

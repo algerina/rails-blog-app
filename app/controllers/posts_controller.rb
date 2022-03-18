@@ -20,9 +20,7 @@ class PostsController < ApplicationController
     if post.valid?
       post.save
       flash.notice = 'Post added successfuly.'
-      # redirect_to user_path(@current_user.id)
     else
-      # redirect_to new_user_post_path(@current_user.id)
       flash.alert = "Couldn't add the post."
     end
     redirect_to user_path(@current_user.id)
