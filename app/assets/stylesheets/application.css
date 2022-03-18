@@ -175,8 +175,8 @@ button {
     max-width: 3rem;
     margin: 1rem;
 
-} 
-/* 
-.likeButton {
-    display:flex;
-} */
+}
+
+.comment {
+    color: green;
+}
