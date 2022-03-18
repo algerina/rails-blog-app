@@ -23,17 +23,7 @@ Unknowing I must soon unpetal.
 Compared with me, a tree is immortal
 And a flower-head not tall, but more startling,
 And I want the ones longevity and the others daring.
-
-Tonight, in the infinitesimal light of the stars,
-The trees and flowers have been strewing their cool odors.
-I walk among them, but none of them are noticing.
-Sometimes I think that when I am sleeping
-I must most perfectly resemble them--
-Thoughts gone dim.
-It is more natural to me, lying down.
-Then the sky and I are in open conversation,
-And I shall be useful when I lie down finally:
-The the trees may touch me for once, and the flowers have time for me.')
+')
 
 post2 = Post.create(author: user2, title: 'Enigma with Flower', text: 'Victory. It has come late, I had not learnt
 how to arrive, like the lily, at will,
