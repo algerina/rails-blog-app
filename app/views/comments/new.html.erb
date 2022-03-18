@@ -1,11 +1,7 @@
 
 
     <h2> Comments</h2>
-    <% flash.each do |type, msg| %>
-      <div class="comment">
-        <%= msg %>
-      </div>
-    <% end %>
+
 <%= form_with model: @comment, url: user_post_comments_path do |f| %>
 
      <div>
