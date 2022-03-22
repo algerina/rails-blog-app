@@ -11,6 +11,12 @@
   </head>
 
   <body>
+
+  <header class="p-5 bg-slate-300">
+      <div class="flex justify-between max-w-screen-lg mx-auto">
+        <%= link_to root_path, class: "text-3xl" do %>
+          Blog App
+        <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
