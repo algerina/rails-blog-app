@@ -180,3 +180,8 @@ button {
 .comment {
     color: green;
 }
+
+.logout {
+    display: flex;
+    justify-content: flex-end;
+}
