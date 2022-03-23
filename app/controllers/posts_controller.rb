@@ -27,6 +27,15 @@ class PostsController < ApplicationController
     redirect_to user_path(@current_user.id)
   end
 
+  def destroy
+
+    @user = current_user
+    @post = @user.posts.find(params[:id])
+    @post.destroy!
+    flash[:alert] = 'Post deleted successfuly'
+    redirect_to user_posts_url(@user.id)
+  end
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
