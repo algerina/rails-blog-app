@@ -1,15 +1,19 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    @post_id = params[:id]
   end
 
   def show
-    @user_id = params[:user_id]
-    @post_id = params[:id]
+    @user = current_user
+
     @post = Post.find(params[:id])
   end
+
+
 
   def new
     @post = Post.new
@@ -28,13 +32,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-
-    @user = current_user
-    @post = @user.posts.find(params[:id])
-    @post.destroy!
-    flash[:alert] = 'Post deleted successfuly'
-    redirect_to user_posts_url(@user.id)
+    @current_user = current_user
+    @user = User.find_by(id: params[:user_id])
+    @post = @user.posts.find_by(id: params[:id])
+    @post.destroy
+    redirect_to user_posts_path(@user.id), success: 'Post was successfully deleted'
   end
+
 
   def post_params
     params.require(:post).permit(:title, :text)

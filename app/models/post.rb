@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   after_save :update_posts_counter
+  after_destroy :update_posts_counter
 
   # private
 
