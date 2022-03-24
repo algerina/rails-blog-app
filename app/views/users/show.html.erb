@@ -11,11 +11,13 @@
 <p><%= @post.bio%></p>
 <%@post.most_recent_posts.each do |post|%>
     <div>
-    <p><%=post.title%></p>
+    <%= link_to (post.title),user_post_path(@post.id) %>
+
     <p><%=post.text%></p>
      <p><%= "Comments: #{post.comments_counter || 0}, Likes: #{post.likes_counter || 0 }" %></p>
     </div>
     <%end%>
     <button class="allPosts counter"><%= link_to ("See all posts"),user_posts_path(@post.id) %></button>
+
 </div>
 </section>
