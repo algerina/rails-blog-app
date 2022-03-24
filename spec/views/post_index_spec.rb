@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-RSpec.describe 'User show page', type: :system do
+RSpec.describe 'User post index page', type: :system do
     before do
         User.create(id: 1, name: 'name', email: 'name@name.com', bio: "Artist from Dreamland",
         photo: 'https://randomuser.me/api/portraits/women/50.jpg',
@@ -18,19 +18,28 @@ Post.create(id: 3, author_id: 1, title: 'Test 3', text: 'Testing whith Capybera 
 
 Post.create(id: 4, author_id: 1, title: 'Test 4', text: 'Testing whith Capybera', comments_counter: 0,
         likes_counter: 0)
+
+Comment.create(author_id: 1, post_id: 2, text: 'I like Capybera')
+
+Like.create(author_id: 1, post_id: 1)
+
+
+
    end
  
-   describe 'Visiting the users show page' do
-     before :each do
-       visit '/users/1'
+   describe 'Visiting the post index page' do
+    before :each do
+      visit '/users/1/posts'
      end
 
- 
-      it 'should display the username of user' do
+
+     
+    it "should display the user's username" do
         expect(page).to have_text('name')
       end
+
  
-      it 'should display the profile picture of user' do
+      it "should display the user's profile picture" do
         expect(page).to have_css('img')
       end
  
@@ -39,30 +48,33 @@ Post.create(id: 4, author_id: 1, title: 'Test 4', text: 'Testing whith Capybera'
       end
 
 
-      it 'should display the Bio of user' do
-        expect(page).to have_text('Artist from Dreamland')
+      it 'should display the Title of user' do
+        expect(page).to have_text('Test 1')
       end
 
-      it "should display the user's recent posts" do
-        expect(page).to have_text('Test 1')
-        expect(page).to have_text('Test 2')
-        expect(page).to have_text('Test 3')
+      it "should display some text of the post's body" do
+        expect(page).to have_text('Testing whith Capybera')
+      end
+
+      it 'should display recent comments' do
+        expect(page).to have_text('I like Capybera')
       end
 
       
-     it 'should have a See all posts button' do
-        expect(page).to have_button('See all posts')
+      it 'should display the number of comments of the post' do
+        expect(page).to have_text('Comments: 1')
       end
-  
- 
-      it 'should redirect to post show page when clicking a user post' do
+
+       
+      it 'should display the number of likes of the post' do
+        expect(page).to have_text('Likes: 1')
+      end
+
+
+      it 'should redirect to post show page when clicking a post' do
        click_link('Test 1')    
        expect(page).to have_current_path('/users/1/posts/1')
     end
 
-    it 'should redirect to posts show page when clicking a user post' do
-        click_button('See all posts')    
-        expect(page).to have_current_path('/users/1/posts')
-    end
   end
 end

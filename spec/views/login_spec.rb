@@ -3,7 +3,7 @@ require 'rails_helper'
  RSpec.describe 'Login page', type: :system do
    before do
      User.create(id: 1, name: 'name', email: 'name@name.com',
-                 photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg  width = "300" height = "300"',
+                 photo: 'https://randomuser.me/api/portraits/women/50.jpg"',
                  password: 'password', posts_counter: 0)
    end
 

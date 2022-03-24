@@ -3,12 +3,12 @@
  RSpec.describe 'User index page', type: :system do
    before do
    first_user = User.create(id: 1, name: 'name', email: 'name@name.com',
-        photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg  width = "300" height = "300"',
+        photo: 'https://randomuser.me/api/portraits/women/50.jpg',
         password: 'password', posts_counter: 2)
 
 
       User.create(id: 2, name: 'amel', email: 'amel@amel.com',
-                  photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+                  photo: 'https://randomuser.me/api/portraits/women/50.jpg',
                 password: '123456', posts_counter: 6)
   end
 
