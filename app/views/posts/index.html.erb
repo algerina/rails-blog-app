@@ -1,17 +1,30 @@
 <h1>Posts</h1>
 
 <div class="usersShow">
+<%= link_to 'Create a post' ,new_user_post_path(@user, @post)%>
+
     <div><%= image_tag (@user.photo) unless @user.photo.nil? %></div>
             <h1><%=@user.name%></h1>
             <button class="counter">Number of posts: <%= @user.posts_counter%></button>
             </div>
+            
             <%@posts.each do |post|%>
+
+              <% if can? :destroy, post %> <%= button_to "Delete", user_post_path(post.author_id, post.id), method: :delete %>
+               <%end%>
+
+
+
                 <div class="likeButton">
+                
                 <p class="likes"><%= link_to (post.title),"/users/#{@user.id}/posts/#{post.id}"%></p>
                 <p><%=post.text%></p>
                  <p><%= "Comments: #{post.comments_counter || 0}, Likes: #{post.likes_counter || 0 }" %></p>
                 </div>
+
                 <%post.most_recent_comments.each do |comment|%>
                 <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+
                 <%end%>
-                <%end%>
+
+              <%end%>
