@@ -6,7 +6,7 @@ RSpec.describe 'Post show page', type: :system do
                 photo: 'https://randomuser.me/api/portraits/women/50.jpg',
                 password: 'password', posts_counter: 0)
 
-    User.create(id: 2, name: 'amel', email: 'amel@amel.com', bio: "Artist",
+    User.create(id: 2, name: 'amel', email: 'amel@amel.com', bio: 'Artist',
                 photo: 'https://randomuser.me/api/portraits/women/50.jpg',
                 password: 'aaaaaa', posts_counter: 0)
 

@@ -8,6 +8,5 @@ class UsersController < ApplicationController
     @user = current_user
     # @posts = @user.most_recent_posts
     @post = User.find(params[:id])
-
   end
 end

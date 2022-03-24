@@ -13,8 +13,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
-
   def new
     @post = Post.new
   end
@@ -38,7 +36,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(@user.id), success: 'Post was successfully deleted'
   end
-
 
   def post_params
     params.require(:post).permit(:title, :text)
