@@ -10,11 +10,8 @@ class Api::PostsController < ApplicationController
   
     def show
       @user = User.find(params[:user_id])
-  
       @post = Post.find(params[:id])
       render json: @posts
     end
-
-
 
   end

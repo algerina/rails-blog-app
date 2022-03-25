@@ -76,6 +76,8 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'devise-jwt'
+
 gem 'devise'
 
 gem 'cancancan'

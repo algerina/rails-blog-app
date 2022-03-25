@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
     render :json => User.all
     end
 
-    end
   # GET /users/:id
     def show
     render json: User.find(params[:id])
