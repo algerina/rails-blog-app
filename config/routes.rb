@@ -8,14 +8,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:create]
     end
   end
-  namespace :api, {format: :json} do
-    resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :create] do
-    resources :comments, only: [:index, :create]
 
-  end
-end
-end
+get '/api/posts', to: 'api#index_posts'
+get '/api/posts/:post_id/comments', to: 'api#post_comments'
+post '/api/posts/comment', to: 'api#new_comments'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
