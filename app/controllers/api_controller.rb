@@ -9,7 +9,7 @@ class ApiController < ApplicationController
       render json: Comment.where(post_id: params[:post_id])
     end
   
-    def new_comments
+    def create_comments
  
       data = JSON.parse(request.raw_post)
       @comment = Comment.create(post_id: data['post_id'], user_id: data['user_id'], text: data['text'])

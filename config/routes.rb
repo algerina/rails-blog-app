@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 get '/api/posts', to: 'api#index_posts'
 get '/api/posts/:post_id/comments', to: 'api#post_comments'
-post '/api/posts/comment', to: 'api#new_comments'
+post '/api/posts/comment', to: 'api#create_comments'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
