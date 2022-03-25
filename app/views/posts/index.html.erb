@@ -13,8 +13,6 @@
               <% if can? :destroy, post %> <%= button_to "Delete", user_post_path(post.author_id, post.id), method: :delete %>
                <%end%>
 
-
-
                 <div class="likeButton">
                 
                 <p class="likes"><%= link_to (post.title),"/users/#{@user.id}/posts/#{post.id}"%></p>

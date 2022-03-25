@@ -3,19 +3,21 @@
 <div>
 <h1>
 <div class="usersShow">
-    <div><%= image_tag (@user.photo) unless @user.photo.nil? %></div>
-    <div><%= link_to (@user.name),user_path(@user.id) %></div>
-            <button class="counter">Number of posts: <%= @user.posts_counter%></button>
+    <div><%= image_tag (@post.photo) unless @post.photo.nil? %></div>
+    <div><%= link_to (@post.name),user_path(@post.id) %></div>
+            <button class="counter">Number of posts: <%= @post.posts_counter%></button>
             </div>
 </h1>
-<p><%= @user.bio%></p>
-<%@user.most_recent_posts.each do |post|%>
+<p><%= @post.bio%></p>
+<%@post.most_recent_posts.each do |post|%>
     <div>
-    <p><%=post.title%></p>
+    <%= link_to (post.title),user_post_path(@post.id) %>
+
     <p><%=post.text%></p>
      <p><%= "Comments: #{post.comments_counter || 0}, Likes: #{post.likes_counter || 0 }" %></p>
     </div>
     <%end%>
-    <button class="allPosts counter"><%= link_to ("See all posts"),user_posts_path(@user.id) %></button>
+    <button class="allPosts counter"><%= link_to ("See all posts"),user_posts_path(@post.id) %></button>
+
 </div>
 </section>

@@ -7,14 +7,14 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
 
-  Roles = [ :admin , :default ]
+  ROLES = %i[admin default].freeze
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 
   def most_recent_posts
-    posts.order(created_at: :desc).limit(3)
+    posts.order(created_at: :asc).limit(3)
   end
 
   validates :name, presence: true, length: { minimum: 2 }, uniqueness: true

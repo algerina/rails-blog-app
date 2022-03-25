@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
     @user = User.find(params[:user_id])
@@ -8,12 +8,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:user_id])
 
     @post = Post.find(params[:id])
   end
-
-
 
   def new
     @post = Post.new
@@ -38,7 +36,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(@user.id), success: 'Post was successfully deleted'
   end
-
 
   def post_params
     params.require(:post).permit(:title, :text)
