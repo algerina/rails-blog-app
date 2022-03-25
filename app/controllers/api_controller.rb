@@ -10,14 +10,30 @@ class ApiController < ApplicationController
     end
   
     def create_comments
- 
-      data = JSON.parse(request.raw_post)
-      @comment = Comment.create(post_id: data['post_id'], user_id: data['user_id'], text: data['text'])
+      @comment = Comment.new(comment_params)
+      @comment.post_id = params[:post_id]
+      @comment.author_id = params[:user_id]
   
       if @comment.save
-        render json: 'Comment created successfully'
+        render json: { status: 201, message: 'Comment creation success!', content: { comment: @comment } }
       else
-        render json: 'Comment not created'
+        render json: @comment.errors, status: :bad_request, message: 'Failed!'
       end
+  
+
+      # data = JSON.parse(request.raw_post)
+      # @comment = Comment.create(post_id: data['post_id'], user_id: data['user_id'], text: data['text'])
+  
+      # if @comment.save
+      #   render json: 'Comment created successfully'
+      # else
+      #   render json: 'Comment not created'
+      # end
+    end
+
+    private
+
+    def comment_params
+      params.permit(:text)
     end
   end
